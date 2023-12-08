@@ -1,28 +1,29 @@
 package magentoTestCases;
 
 import java.util.Random;
-
 import org.testng.asserts.SoftAssert;
 
 public class Parameters {
-	static String Url="https://magento.softwaretestingboard.com/";
-	static String [] firstNameRandom={"Eman", "Ahmad", "Lana", "Eva", "Malik"};
-	Random rand = new Random();
-	int randomIndex = rand.nextInt(firstNameRandom.length);
-	String randomName = firstNameRandom[randomIndex];
-
-	static String [] lasttNameRandom={"Mohammad", "Khaled", "Hamze", "Ehab", "Oday"};
-	Random rand1 = new Random();
-	int randomIndex1 = rand1.nextInt(lasttNameRandom.length); // استخدم rand1 هنا
-	String randomName1 = lasttNameRandom[randomIndex1];
-
+	SoftAssert softassert = new SoftAssert () ;
 	
-    Random rand11 = new Random();
-    int randomNumber = rand.nextInt(9000) + 1000;
-    int randomIndex11 = rand.nextInt(firstNameRandom.length);
-    String randomName11 = firstNameRandom[randomIndex];
-    String randomEmail = randomName + randomNumber + "@example.com";
-    String passwordd=randomName+randomNumber;
+	static String TheWebSite="https://magento.softwaretestingboard.com/";
+	static String SignUpPage="https://magento.softwaretestingboard.com/customer/account/create/";
+	static String logoutPage="https://magento.softwaretestingboard.com/customer/account/logout/";
+	static String loginPage = "https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/" ;
+	
+	static String [] firstName={"Farahhh", "Sarahhh", "Hayahh", "Linahh", "Suhahh"};
+	static String [] lasttName={"Mohammad", "Khaled", "Hamzeh", "Ehab", "Oday"};
+	
+	Random rand = new Random();
+	
+	int randomIndex1 = rand.nextInt(firstName.length);
+	String randomFirstName = firstName[randomIndex1];
 
-	static SoftAssert Check =new SoftAssert();
+	int randomIndex2 = rand.nextInt(lasttName.length);
+	String randomLastName = lasttName[randomIndex1];
+	
+    int randomNumberForTheEmail = rand.nextInt(9000) + 1000;
+    
+    String randomEmail = randomFirstName + randomLastName + "@example.com";
+    String emailPassword = randomFirstName + randomNumberForTheEmail;
 }
